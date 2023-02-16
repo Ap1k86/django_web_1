@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} Contact {% endblock title%}
+
+{% block body %}
+
+<h1 style="text-align: center"> Мои контакты </h1>
+<p style="text-align: right"> Издание «IT Step». </p>
+<u>Главный редактор</u> — Я сам.
+<br>
+<img src="{% static 'img/1.jpg' %}" style="float: right;">
+
+<p>
+    <bold> {{ time }}</bold>
+</p>
+<h3 style="color: #555">Телефон:</h3> <i><b>{{ phone_number }}</b></i>.
+<br>
+E-mail: {{ email }}.<br>
+<p class="red f"> Участвуют:</p>
+{% for name in names%}
+<ul>
+    <li>
+        {{ name }}
+    </li>
+</ul>
+
+<br>
+{% endfor %}
+
+{% endblock body %}

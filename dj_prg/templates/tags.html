@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}  Теги {% endblock title %}
+
+{% block body %}
+
+<p style="color: blue;">
+    <b>Дата: </b> {% now "j.m.Y H:i:s (Месяц: F) (День недели: l)" %} <br>
+</p>
+
+<p class="red">
+    <b>Условие: </b> {{ age }} {% if age >= 18 %} Взрослый {% else %} Молодой {% endif %}
+</p>
+
+<p>
+    <b>Цикл: </b> {% for li in lst %} <br>
+<li>{{ li }} {% empty %} Вывод этого сообщения когда список будет пустой
+    {% endfor %}
+</p>
+
+<p>
+    <b>Переменные: </b> {% with name="Anton" nom=1 %} #{{ nom }} Имя: {{ name }} {% endwith %}
+</p>
+
+{% endblock body %}
